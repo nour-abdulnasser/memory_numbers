@@ -84,7 +84,7 @@
             <div class="text-center border-b mb-5 py-3">
               <h3>Generated Number</h3>
             </div>
-            <div class="px-5 pb-5">
+            <div class="px-5 pb-5 overflow-wrap">
               {{ isFormatted ? formatNum(rand) : rand }}
             </div>
           </div>
@@ -94,8 +94,8 @@
             <div class="text-center border-b mb-5 py-3">
               <h3>Your Input</h3>
             </div>
-            <div class="px-5 pb-5">
-              {{ isFormatted ? formatNum(memorizedNum.replace(/\s/g, "")) : memorizedNum.replace(/\s/g, "") }}
+            <div class="px-5 pb-5 overflow-wrap">
+              {{ isFormatted ? formatNum(memorizedNum?.replace(/\s/g, "")) : memorizedNum?.replace(/\s/g, "") }}
             </div>
           </div>
         </v-col>
@@ -122,7 +122,7 @@ let intervalId = null;
 
 const check = () => {
   showResult.value = true;
-  if (memorizedNum.value.replace(/\s/g, "") == rand.value) {
+  if (memorizedNum.value?.replace(/\s/g, "") == rand.value) {
     isCorrect.value = true;
   } else {
     isCorrect.value = false;
