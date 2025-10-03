@@ -95,7 +95,7 @@
               <h3>Your Input</h3>
             </div>
             <div class="px-5 pb-5">
-              {{ isFormatted ? formatNum(memorizedNum) : memorizedNum }}
+              {{ isFormatted ? formatNum(memorizedNum.replace(/\s/g, "")) : memorizedNum.replace(/\s/g, "") }}
             </div>
           </div>
         </v-col>
@@ -122,7 +122,7 @@ let intervalId = null;
 
 const check = () => {
   showResult.value = true;
-  if (memorizedNum.value == rand.value) {
+  if (memorizedNum.value.replace(/\s/g, "") == rand.value) {
     isCorrect.value = true;
   } else {
     isCorrect.value = false;
