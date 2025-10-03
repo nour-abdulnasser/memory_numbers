@@ -127,7 +127,6 @@ const check = () => {
   } else {
     isCorrect.value = false;
   }
-  console.log("eval", isCorrect.value);
 };
 
 const generateRand = async () => {
@@ -154,7 +153,6 @@ const generateRand = async () => {
   function incrementTime() {
     if (timePercentage.value <= 100 && seconds.value) {
       timePercentage.value += 10 / seconds.value;
-      console.log(timePercentage.value);
     } else {
       clearInterval(intervalId);
     }
