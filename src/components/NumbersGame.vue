@@ -95,7 +95,11 @@
               <h3>Your Input</h3>
             </div>
             <div class="px-5 pb-5 overflow-wrap">
-              {{ isFormatted ? formatNum(memorizedNum?.replace(/\s/g, "")) : memorizedNum?.replace(/\s/g, "") }}
+              {{
+                isFormatted
+                  ? formatNum(memorizedNum?.replace(/\s/g, ""))
+                  : memorizedNum?.replace(/\s/g, "")
+              }}
             </div>
           </div>
         </v-col>
@@ -132,6 +136,10 @@ const check = () => {
 const generateRand = async () => {
   if (!digits.value || !/^[0-9]*$/.test(digits.value)) {
     alert("Please enter a valid Digits value");
+    return;
+  }
+  if (seconds.value < 0) {
+    alert("Please enter a valid amount of time");
     return;
   }
 
